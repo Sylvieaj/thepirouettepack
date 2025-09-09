@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Pirouette Pack — Products</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img class="logo" src="assets/logo-real.jpeg" alt="The Pirouette Pack logo">
+      <span>The Pirouette Pack</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <nav class="site-nav" data-collapsible>
+      <a href="index.html">Home</a>
+      <a href="products.html" class="active">Products</a>
+      <a href="index.html#how-it-works">How it works</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="products-hero">
+      <h1>Choose your pack</h1>
+      <p>Three levels — same adorable vibe.</p>
+    </section>
+
+    <section class="product-grid">
+      <article class="product-card">
+        <img src="assets/pack-original.svg" alt="Original pack illustration">
+        <h2>Original</h2>
+        <ul class="bullet">
+          <li>Bun net, pins, hair ties</li>
+          <li>Mini hairspray</li>
+          <li>Pep-talk quote card</li>
+        </ul>
+        <div class="price-row">
+          <span class="price">$15</span>
+          <a class="btn primary" href="#">Add to bag</a>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <img src="assets/pack-ultra.svg" alt="Ultra pack illustration">
+        <h2>Ultra</h2>
+        <ul class="bullet">
+          <li>Everything in Original</li>
+          <li>Mini brush + compact mirror</li>
+          <li>Mints / gum (optional)</li>
+        </ul>
+        <div class="price-row">
+          <span class="price">$25</span>
+          <a class="btn primary" href="#">Add to bag</a>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <img src="assets/pack-deluxe.svg" alt="Deluxe pack illustration">
+        <h2>Deluxe</h2>
+        <ul class="bullet">
+          <li>Everything in Ultra</li>
+          <li>Glitter spray (subtle ✨)</li>
+          <li>Pink zipper pouch</li>
+        </ul>
+        <div class="price-row">
+          <span class="price">$39</span>
+          <a class="btn primary" href="#">Add to bag</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="note">
+      <p><strong>Note:</strong> This is a simple demo shop without payments yet. When you’re ready, ask a parent/guardian to help connect a safe checkout.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> The Pirouette Pack</p>
+  </footer>
+</body>
+</html>

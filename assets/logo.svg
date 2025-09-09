@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#F7CFE3"/>
+      <stop offset="1" stop-color="#FFE8F1"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="56" fill="url(#g)" stroke="#f4b6d3" stroke-width="4"/>
+  <!-- simple tutu icon -->
+  <path d="M60 28c8 0 14 6 14 14v4h10c-3 10-12 16-24 16s-21-6-24-16h10v-4c0-8 6-14 14-14z" fill="#fff" stroke="#f4b6d3" stroke-width="2" />
+  <text x="60" y="92" font-family="Playfair Display, Georgia, serif" font-size="16" text-anchor="middle" fill="#d14f8b">PP</text>
+</svg>
