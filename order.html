@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Place Order</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Place Your Order</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="extras.html">Extras</a>
+      <a href="order.html">Order</a>
+      <div class="cart-icon" onclick="toggleCart()">
+        🛍️ <span id="cart-count">0</span>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Order Form</h2>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" name="name" required><br><br>
+
+      <label for="email">Email:</label>
+      <input type="email" name="email" required><br><br>
+
+      <label for="address">Address:</label>
+      <textarea name="address" required></textarea><br><br>
+
+      <label for="order">Order Details:</label>
+      <textarea id="order-details" name="order" readonly></textarea><br><br>
+
+      <button type="submit">Submit Order</button>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
