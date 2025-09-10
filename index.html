@@ -1,20 +1,12 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Pirouette Pack</title>
-  <style>
-    body { font-family: Arial, sans-serif; text-align: center; background-color: #fff0f5; }
-    h1 { color: #d87093; }
-    img { margin: 20px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-  </style>
-</head>
-<body>
-  <h1>The Pirouette Pack</h1>
-  <img src="images/logo.jpeg" alt="Pirouette Pack Logo" width="200"><br>
-  <img src="images/dance-stickers.jpeg" alt="Dance Stickers" width="300"><br>
-  <img src="images/coastal-stickers.jpeg" alt="Coastal Stickers" width="300">
-</body>
-</html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Home - The Pirouette Pack</title><link rel="icon" type="image/png" href="assets/favicon.png"><link rel="icon" type="image/x-icon" href="assets/favicon.ico"><link rel="stylesheet" href="style.css"></head><body>
+<div id="welcomeBanner" class="welcome-banner" style="display:none">Welcome, <span id="welcomeName"></span> 💖</div>
+<header class="header"><img class="logo" src="assets/images/logo.jpeg" alt="logo"><h1>🎀 The Pirouette Pack 🎀</h1></header>
+<nav><a class="navlink" href="index.html">Home</a><a class="navlink" href="products.html">Products</a><a class="navlink" href="stickers.html">Stickers</a><a class="navlink" href="monogramming.html">Monogramming</a></nav>
+<div class="container"><div class="hero"><h2>Welcome to Pirouette Pack</h2><p class="blurb">Hand-picked dance packs, stickers and rhinestone monogramming — made with love by Sylvie.</p>
+<button id="openSignup" class="signup-btn">Join the Member's Program 💖</button></div>
+<div class="divider"><div class="divider-line"></div><div>🎀</div><div class="divider-line"></div></div>
+<section><h3>Notes from Me</h3><div class="card"><p class="blurb">Hi, my name is Sylvie and I love to dance. I created The Pirouette Pack so that dancers like me don't have to feel stressed at a recital or competition. Each pack is created with love and I hope you enjoy using them. Sign up for my member's program to receive discounts and maybe even new releases! xx Sylvie 🎀💖🩰🌸</p></div></section>
+<!-- signup modal -->
+<div id="modalBackdrop" class="modal-backdrop"></div><div id="signupModal" class="modal"><button id="closeSignup" style="float:right">✕</button><h3>Join the Member's Program 🎀</h3><form id="signupForm"><input id="signupName" placeholder="Your name" required style="width:100%;padding:8px;margin:8px 0"><input id="signupEmail" placeholder="Your email" type="email" required style="width:100%;padding:8px;margin:8px 0"><button type="submit" class="signup-btn">Sign Up 💌</button></form><div id="signupThanks" style="display:none;padding:10px;color:#d63384;font-weight:700">Thank you for joining! 💖</div></div></div>
+<footer class="footer">© Pirouette Pack</footer><script src="script.js"></script></body></html>
