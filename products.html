@@ -21,9 +21,12 @@
     <nav class="site-nav" data-collapsible>
       <a href="index.html">Home</a>
       <a href="products.html" class="active">Products</a>
-      <a href="index.html#how-it-works">How it works</a>
-      <a href="index.html#contact">Contact</a>
+      <a href="extras.html">Extras</a>
+      <a href="order.html">Order</a>
     </nav>
+    <div class="cart-icon" onclick="toggleCart()">
+      🛍️ <span id="cart-count">0</span>
+    </div>
   </header>
 
   <main>
@@ -43,7 +46,7 @@
         </ul>
         <div class="price-row">
           <span class="price">$15</span>
-          <a class="btn primary" href="#">Add to bag</a>
+          <button class="btn primary" onclick="addToCart('Original Pirouette Pack')">Add to bag</button>
         </div>
       </article>
 
@@ -57,7 +60,7 @@
         </ul>
         <div class="price-row">
           <span class="price">$25</span>
-          <a class="btn primary" href="#">Add to bag</a>
+          <button class="btn primary" onclick="addToCart('Ultra Pirouette Pack')">Add to bag</button>
         </div>
       </article>
 
@@ -71,7 +74,7 @@
         </ul>
         <div class="price-row">
           <span class="price">$39</span>
-          <a class="btn primary" href="#">Add to bag</a>
+          <button class="btn primary" onclick="addToCart('Deluxe Pirouette Pack')">Add to bag</button>
         </div>
       </article>
     </section>
@@ -84,5 +87,11 @@
   <footer class="site-footer">
     <p>© <span id="year"></span> The Pirouette Pack</p>
   </footer>
+
+  <div id="cart-popup" class="cart-popup hidden">
+    <h3>Your Bag</h3>
+    <ul id="cart-items"></ul>
+    <button onclick="goToCheckout()">Checkout</button>
+  </div>
 </body>
 </html>
