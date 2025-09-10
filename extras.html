@@ -3,40 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Extras</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Extras - Pirouette Pack</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <h1>Extras</h1>
     <nav>
       <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="stickers.html">Stickers</a>
       <a href="extras.html">Extras</a>
-      <a href="order.html">Order</a>
-      <div class="cart-icon" onclick="toggleCart()">
-        🛍️ <span id="cart-count">0</span>
-      </div>
+      <a href="thankyou.html">Thank You</a>
     </nav>
   </header>
-
   <main>
-    <h2>Extras for Your Pack</h2>
-    <div class="product">
-      <p>Sticker Pack</p>
-      <button onclick="addToCart('Sticker Pack')">Add to Bag</button>
+    <div class="card">
+      <h2>Monogramming - $5</h2>
+      <p>Personalize your pack with custom initials.</p>
     </div>
-    <div class="product">
-      <p>Monogramming</p>
-      <button onclick="addToCart('Monogramming')">Add to Bag</button>
+    <div class="card">
+      <h2>Extra Stickers - $5</h2>
+      <p>Add more cute stickers to your order.</p>
     </div>
   </main>
-
-  <div id="cart-popup" class="cart-popup hidden">
-    <h3>Your Bag</h3>
-    <ul id="cart-items"></ul>
-    <button onclick="goToCheckout()">Checkout</button>
-  </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
