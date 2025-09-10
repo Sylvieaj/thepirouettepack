@@ -1,65 +1,15 @@
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #fff0f6;
-  color: #333;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
-
-header.site-header {
-  background-color: #ffcce6;
-  padding: 20px;
-}
-
-header .logo {
-  height: 80px;
-  display: block;
-  margin: 0 auto;
-}
-
-header h1 {
-  margin: 10px 0;
-  color: #cc2b5e;
-}
-
-nav a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-}
-
-nav a:hover {
-  color: #ff69b4;
-}
-
-.product-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  margin: 20px auto;
-  padding: 20px;
-  max-width: 300px;
-}
-
-.product-card img {
-  max-width: 100%;
-  border-radius: 8px;
-}
-
-footer {
-  background-color: #ffcce6;
-  padding: 10px;
-  margin-top: 20px;
-}
-
-footer .socials a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #333;
-}
-
-footer .socials a:hover {
-  color: #ff69b4;
-}
+:root{--bg:#fff6fb;--accent:#ff80bf;--muted:#6b6b6b;--card:#fff}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:#222}
+.header{padding:18px;text-align:center}.logo{max-width:140px;display:block;margin:0 auto}
+nav{background:#fff;padding:10px;text-align:center}.navlink{margin:0 12px;color:#d63384;text-decoration:none;font-weight:700}
+.container{max-width:1000px;margin:20px auto;padding:0 16px}.hero{padding:28px 0;text-align:center}
+.cta{display:inline-block;background:var(--accent);color:white;padding:10px 18px;border-radius:12px;text-decoration:none;font-weight:700}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:18px}
+.card{background:var(--card);padding:12px;border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,0.06);text-align:center}
+.card img{width:100%;height:180px;object-fit:cover;border-radius:10px}.price{font-weight:800;color:var(--accent);margin-top:8px}.blurb{color:var(--muted);font-size:14px;margin-top:6px}
+.divider{display:flex;align-items:center;justify-content:center;margin:26px 0;color:var(--accent);font-size:20px}
+.divider-line{height:2px;background:#ffd6e8;width:120px;margin:0 12px;border-radius:2px}
+.footer{padding:24px;text-align:center;color:var(--muted);margin-top:30px}
+.signup-btn{background:var(--accent);color:white;padding:10px 16px;border-radius:12px;border:none;font-weight:700;cursor:pointer}
+.modal-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.35);z-index:50}.modal{display:none;position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);background:white;padding:20px;border-radius:12px;z-index:60;box-shadow:0 20px 40px rgba(0,0,0,0.12)}
+.welcome-banner{background:#ffd6e8;color:#d63384;padding:10px;text-align:center;font-weight:700;border-bottom:3px solid #ff99cc}

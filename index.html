@@ -1,37 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Pirouette Pack</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header class="site-header">
-    <div class="bow-logo">🎀</div>
-    <img src="assets/logo.jpeg" alt="The Pirouette Pack Logo" class="logo">
-    <h1>The Pirouette Pack ✨ Dance with Confidence</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="products.html">Products</a>
-      <a href="stickers.html">Stickers</a>
-      <a href="extras.html">Extras</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="intro">
-      <h2>Welcome</h2>
-      <p>Hi, my name is Sylvie and I love to dance. I created The Pirouette Pack so that dancers like me don't have to feel stressed at a recital or competition. Each pack is created with love and I hope you enjoy using them. Sign up for my member's program to receive discounts and maybe even new releases!<br>xx Sylvie 🎀💖🩰🌸</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 The Pirouette Pack</p>
-    <div class="socials">
-      <a href="https://instagram.com" target="_blank">📸 Instagram</a>
-      <a href="https://youtube.com" target="_blank">▶️ YouTube</a>
-    </div>
-  </footer>
-</body>
-</html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Home - The Pirouette Pack</title><link rel="icon" type="image/png" href="assets/favicon.png"><link rel="icon" type="image/x-icon" href="assets/favicon.ico"><link rel="stylesheet" href="style.css"></head><body>
+<div id="welcomeBanner" class="welcome-banner" style="display:none">Welcome, <span id="welcomeName"></span> 💖</div>
+<header class="header"><img class="logo" src="assets/images/logo.jpeg" alt="logo"><h1>🎀 The Pirouette Pack 🎀</h1></header>
+<nav><a class="navlink" href="index.html">Home</a><a class="navlink" href="products.html">Products</a><a class="navlink" href="stickers.html">Stickers</a><a class="navlink" href="monogramming.html">Monogramming</a></nav>
+<div class="container"><div class="hero"><h2>Welcome to Pirouette Pack</h2><p class="blurb">Hand-picked dance packs, stickers and rhinestone monogramming — made with love by Sylvie.</p>
+<button id="openSignup" class="signup-btn">Join the Member's Program 💖</button></div>
+<div class="divider"><div class="divider-line"></div><div>🎀</div><div class="divider-line"></div></div>
+<section><h3>Notes from Me</h3><div class="card"><p class="blurb">Hi, my name is Sylvie and I love to dance. I created The Pirouette Pack so that dancers like me don't have to feel stressed at a recital or competition. Each pack is created with love and I hope you enjoy using them. Sign up for my member's program to receive discounts and maybe even new releases! xx Sylvie 🎀💖🩰🌸</p></div></section>
+<!-- signup modal -->
+<div id="modalBackdrop" class="modal-backdrop"></div><div id="signupModal" class="modal"><button id="closeSignup" style="float:right">✕</button><h3>Join the Member's Program 🎀</h3><form id="signupForm"><input id="signupName" placeholder="Your name" required style="width:100%;padding:8px;margin:8px 0"><input id="signupEmail" placeholder="Your email" type="email" required style="width:100%;padding:8px;margin:8px 0"><button type="submit" class="signup-btn">Sign Up 💌</button></form><div id="signupThanks" style="display:none;padding:10px;color:#d63384;font-weight:700">Thank you for joining! 💖</div></div></div>
+<footer class="footer">© Pirouette Pack</footer><script src="script.js"></script></body></html>
