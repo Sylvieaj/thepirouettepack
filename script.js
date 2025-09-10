@@ -10,7 +10,7 @@ function updateCart() {
   const cartItems = document.getElementById('cart-items');
   if (cartItems) {
     cartItems.innerHTML = '';
-    cart.forEach((item, index) => {
+    cart.forEach((item) => {
       const li = document.createElement('li');
       li.textContent = item;
       cartItems.appendChild(li);

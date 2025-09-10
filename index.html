@@ -1,104 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Pirouette Pack — Home</title>
-  <meta name="description" content="The Pirouette Pack: the cutest dance competition kit for buns, pins, and sparkle." />
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pirouette Pack</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="index.html">
-      <img class="logo" src="assets/logo-real.jpeg" alt="The Pirouette Pack logo">
-      <span>The Pirouette Pack</span>
-    </a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-    <nav class="site-nav" data-collapsible>
-      <a href="index.html" class="active">Home</a>
-      <a href="products.html">Products</a>
-      <a href="#how-it-works">How it works</a>
-      <a href="#contact">Contact</a>
+  <header>
+    <h1>Pirouette Pack</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="extras.html">Extras</a>
+      <a href="order.html">Order</a>
+      <div class="cart-icon" onclick="toggleCart()">
+        🛍️ <span id="cart-count">0</span>
+      </div>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero-content">
-        <h1>All your dance day essentials, in one cute pack.</h1>
-        <p>Meet the Pirouette Pack — a perfectly pink bundle with bun nets, pins, hair ties, mini hairspray, mints, and a tiny pep-talk card.</p>
-        <div class="cta-row">
-          <a class="btn primary" href="products.html">See the Packs</a>
-          <a class="btn ghost" href="#contact">Ask a question</a>
-        </div>
-      </div>
-      <img class="hero-image" src="assets/hero-placeholder.svg" alt="Pink kit pouch and ballet items illustration">
-    </section>
-
-    <section class="features">
-      <h2>Why dancers love it</h2>
-      <div class="grid-3">
-        <article class="card">
-          <h3>Competition-ready</h3>
-          <p>Everything you need for a neat bun and quick fixes — no last-minute panic.</p>
-        </article>
-        <article class="card">
-          <h3>Baby pink aesthetic</h3>
-          <p>Soft, clean-girl vibes with rounded edges and minimal design. Adorable.</p>
-        </article>
-        <article class="card">
-          <h3>3 pack options</h3>
-          <p>Original, Ultra, and Deluxe — pick your level of extras and sparkle ✨</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="how-it-works" class="how">
-      <h2>How it works</h2>
-      <ol class="steps">
-        <li><span>1</span>Choose your pack: Original, Ultra, or Deluxe.</li>
-        <li><span>2</span>We bundle it cute with sticker + thank-you card.</li>
-        <li><span>3</span>Keep it in your dance bag and shine on stage.</li>
-      </ol>
-    </section>
-
-    <section class="highlight">
-      <div class="highlight-inner">
-        <h2>Gift it to your dance bestie</h2>
-        <p>Each pack includes a tiny, uplifting quote card. You’ve got this! 💗</p>
-        <a class="btn white" href="products.html">Shop packs</a>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <h2>Contact</h2>
-      <p>Questions? Ask here and we’ll get back to you soon.</p>
-      <form class="contact-form" action="#" method="post" onsubmit="alert('This is a demo form (no backend). Use email instead: hello@thepirouettepack.com'); return false;">
-        <label>
-          Your name
-          <input type="text" name="name" required>
-        </label>
-        <label>
-          Email
-          <input type="email" name="email" required>
-        </label>
-        <label>
-          Message
-          <textarea name="message" rows="4" required></textarea>
-        </label>
-        <button class="btn primary" type="submit">Send</button>
-      </form>
-      <p class="tiny">Tip: since this is offline on your computer, the form just shows a message.</p>
-    </section>
+    <h2>Our Products</h2>
+    <div class="product">
+      <p>Ballet Bun Kit</p>
+      <button onclick="addToCart('Ballet Bun Kit')">Add to Bag</button>
+    </div>
+    <div class="product">
+      <p>Deluxe Pirouette Pack</p>
+      <button onclick="addToCart('Deluxe Pirouette Pack')">Add to Bag</button>
+    </div>
   </main>
 
-  <footer class="site-footer">
-    <p>© <span id="year"></span> The Pirouette Pack · Made with 💗</p>
-  </footer>
+  <div id="cart-popup" class="cart-popup hidden">
+    <h3>Your Bag</h3>
+    <ul id="cart-items"></ul>
+    <button onclick="goToCheckout()">Checkout</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
