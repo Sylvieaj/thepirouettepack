@@ -1,41 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pirouette Pack</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pirouette Pack — Home</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Pirouette Pack</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="extras.html">Extras</a>
-      <a href="order.html">Order</a>
-      <div class="cart-icon" onclick="toggleCart()">
-        🛍️ <span id="cart-count">0</span>
-      </div>
-    </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        <img src="assets/logo.svg" alt="Logo" />
+      </a>
+      <nav class="main-nav">
+        <a href="products.html">Products</a>
+        <a href="stickers.html">Stickers</a>
+        <a href="monogramming.html">Monogramming</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <h2>Our Products</h2>
-    <div class="product">
-      <p>Ballet Bun Kit</p>
-      <button onclick="addToCart('Ballet Bun Kit')">Add to Bag</button>
-    </div>
-    <div class="product">
-      <p>Deluxe Pirouette Pack</p>
-      <button onclick="addToCart('Deluxe Pirouette Pack')">Add to Bag</button>
-    </div>
+  <main class="container home-hero">
+    <h1>Welcome to Pirouette Pack</h1>
+    <p class="tagline">Baby pink • clean girl vibe • pretty dance packs</p>
+    <p class="intro">Hand-picked dance packs, stickers and custom monogramming. Click products to shop.</p>
+    <a class="cta" href="products.html">See products</a>
   </main>
 
-  <div id="cart-popup" class="cart-popup hidden">
-    <h3>Your Bag</h3>
-    <ul id="cart-items"></ul>
-    <button onclick="goToCheckout()">Checkout</button>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© Pirouette Pack</p>
+    </div>
+  </footer>
+
+  <!-- Membership modal (popup) -->
+  <div id="memberModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-panel">
+      <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+      <h2 id="modalTitle">Join the Pirouette Club</h2>
+      <p>Sign up for members-only discounts, early drops and sticker freebies.</p>
+      <form id="signupForm">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@email.com" required />
+        <div class="modal-actions">
+          <button type="submit" class="btn">Join</button>
+          <label class="dont-show">
+            <input type="checkbox" id="dontShowAgain" /> Don't show again
+          </label>
+        </div>
+      </form>
+    </div>
   </div>
+
+  <div id="modalBackdrop" class="backdrop hidden"></div>
 
   <script src="script.js"></script>
 </body>
