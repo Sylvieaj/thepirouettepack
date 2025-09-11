@@ -1,11 +1,15 @@
 
 // Cart object
-let cart = {};
+let cart = JSON.parse(localStorage.getItem("cart")) || {};
 
 // Product prices
 const products = {
   "Original Pack 🎀": 25,
-  "Sophia's Hair Kit ✨": 35,
+  "Ultra Pack ✨": 25,
+  "Deluxe Pack 🌸": 30,
+  "Sophia's Hair Kit (Regular) ✨": 20,
+  "Sophia's Hair Kit (Basic) ✨": 25,
+  "Sophia's Hair Kit (Deluxe) ✨": 35,
   "Alex's Pack 💕": 35
 };
 
@@ -27,11 +31,12 @@ document.querySelectorAll(".add-to-cart").forEach(button => {
     } else {
       cart[productName]++;
     }
+    localStorage.setItem("cart", JSON.stringify(cart));
     updateCart();
   });
 });
 
-// Update cart display
+// Update cart display (for cart page)
 function updateCart() {
   const cartItemsDiv = document.getElementById("cart-items");
   if (!cartItemsDiv) return;
@@ -56,6 +61,7 @@ function updateCart() {
       } else {
         delete cart[productName];
       }
+      localStorage.setItem("cart", JSON.stringify(cart));
       updateCart();
     });
 
@@ -64,6 +70,7 @@ function updateCart() {
     increaseBtn.innerText = "➕";
     increaseBtn.addEventListener("click", () => {
       cart[productName]++;
+      localStorage.setItem("cart", JSON.stringify(cart));
       updateCart();
     });
 
@@ -72,6 +79,7 @@ function updateCart() {
     removeBtn.innerText = "Remove";
     removeBtn.addEventListener("click", () => {
       delete cart[productName];
+      localStorage.setItem("cart", JSON.stringify(cart));
       updateCart();
     });
 
@@ -89,8 +97,52 @@ function updateCart() {
   }
 }
 
-// Placeholder checkout
-function checkout() {
-  const totalText = document.getElementById("cart-total").innerText;
-  alert("Proceeding to checkout! 🎀 " + totalText);
+// Checkout page rendering
+if (document.getElementById("checkout-items")) {
+  const checkoutDiv = document.getElementById("checkout-items");
+  let total = 0;
+  for (const [productName, qty] of Object.entries(cart)) {
+    const baseName = productName.split(" - ")[0];
+    const price = products[baseName] || 0;
+    const itemTotal = price * qty;
+
+    const item = document.createElement("div");
+    item.innerText = `${productName} — $${price} x ${qty} = $${itemTotal}`;
+    checkoutDiv.appendChild(item);
+
+    total += itemTotal;
+  }
+  const totalDiv = document.getElementById("checkout-total");
+  if (totalDiv) totalDiv.innerText = "Total: $" + total;
+}
+
+// Confirm order
+function confirmOrder() {
+  localStorage.setItem("lastOrder", JSON.stringify(cart));
+  cart = {};
+  localStorage.setItem("cart", JSON.stringify(cart));
+  window.location.href = "thankyou.html";
+}
+
+// Thank you page rendering
+if (document.getElementById("order-summary")) {
+  const orderSummaryDiv = document.getElementById("order-summary");
+  const lastOrder = JSON.parse(localStorage.getItem("lastOrder")) || {};
+  let total = 0;
+
+  for (const [productName, qty] of Object.entries(lastOrder)) {
+    const baseName = productName.split(" - ")[0];
+    const price = products[baseName] || 0;
+    const itemTotal = price * qty;
+
+    const item = document.createElement("div");
+    item.innerText = `${productName} — $${price} x ${qty} = $${itemTotal}`;
+    orderSummaryDiv.appendChild(item);
+
+    total += itemTotal;
+  }
+
+  const totalDiv = document.createElement("h3");
+  totalDiv.innerText = "Total: $" + total;
+  orderSummaryDiv.appendChild(totalDiv);
 }

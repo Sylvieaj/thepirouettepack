@@ -1,134 +1,15 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta charset="utf-8">
   <title>Checkout - The Pirouette Pack</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    .checkout-container {
-      max-width: 600px;
-      margin: 30px auto;
-      padding: 20px;
-      background: #fff6fb;
-      border-radius: 16px;
-      box-shadow: 0 6px 18px rgba(255, 182, 217, 0.3);
-      text-align: center;
-    }
-    .checkout-header {
-      font-family: 'Dancing Script', cursive;
-      color: #d63384;
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-    .bow-divider {
-      font-size: 20px;
-      color: #ff80bf;
-      margin: 10px 0;
-    }
-    #checkout-items li {
-      margin: 10px 0;
-      padding: 8px;
-      background: #ffe6f0;
-      border-radius: 10px;
-      font-family: 'Comic Neue', cursive;
-      font-size: 16px;
-      color: #444;
-      list-style: none;
-    }
-    #checkout-total {
-      text-align: center;
-      font-size: 20px;
-      font-weight: 800;
-      color: #d63384;
-      text-shadow: 0 0 6px #ffb6d9;
-      margin: 20px 0;
-    }
-    .pay-btn, .continue-btn {
-      display: block;
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: 12px;
-      font-size: 18px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      margin-top: 12px;
-    }
-    .pay-btn {
-      background: linear-gradient(135deg, #ff99cc, #ffb6d9);
-      color: white;
-      background-image: repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 20px,
-        rgba(255, 255, 255, 0.2) 20px,
-        rgba(255, 255, 255, 0.2) 40px
-      );
-    }
-    .pay-btn:hover {
-      background: linear-gradient(135deg, #ff80bf, #ff99cc);
-      box-shadow: 0 0 12px #ffb6d9;
-      transform: scale(1.05);
-    }
-    .continue-btn {
-      background: #fff;
-      border: 2px solid #ffb6d9;
-      color: #d63384;
-      position: relative;
-      font-family: 'Comic Neue', cursive;
-    }
-    .continue-btn::before, .continue-btn::after {
-      content: "🎀";
-      position: absolute;
-      font-size: 18px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    .continue-btn::before {
-      left: 10px;
-    }
-    .continue-btn::after {
-      right: 10px;
-    }
-    .continue-btn:hover {
-      background: #ffe6f0;
-      box-shadow: 0 0 10px #ffd6e8;
-      transform: scale(1.03);
-    }
-  </style>
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <header class="header">
-    <a href="index.html"><img class="logo" src="assets/images/logo_new.jpeg" alt="logo"></a>
-  </header>
-  <div class="checkout-container">
-    <h1 class="checkout-header">🎀 Review Your Order 🎀</h1>
-    <div class="bow-divider">🎀 🎀 🎀</div>
-    <ul id="checkout-items"></ul>
-    <div class="bow-divider">🎀 🎀 🎀</div>
-    <p id="checkout-total">Total: $0.00</p>
-    <button class="pay-btn" onclick="alert('Payment not set up yet 💖')">Pay with PayPal 💳</button>
-    <a href="products.html"><button class="continue-btn">Continue Shopping</button></a>
-  </div>
-  <script>
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    let list = document.getElementById("checkout-items");
-    let total = 0;
-    if (cart.length === 0) {
-      let li = document.createElement("li");
-      li.textContent = "💖 Your cart is empty, bestie! 🎀";
-      list.appendChild(li);
-    } else {
-      cart.forEach(item => {
-        let li = document.createElement("li");
-        li.textContent = item.product + " - $" + (item.price * item.quantity).toFixed(2) + " (x" + item.quantity + ")";
-        list.appendChild(li);
-        total += item.price * item.quantity;
-      });
-    }
-    document.getElementById("checkout-total").textContent = "Total: $" + total.toFixed(2);
-  </script>
+  <h1>Checkout ✨</h1>
+  <div id="checkout-items"></div>
+  <h2 id="checkout-total">Total: $0</h2>
+  <button onclick="confirmOrder()">Confirm Order 🎀</button>
 </body>
 </html>

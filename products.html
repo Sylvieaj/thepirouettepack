@@ -4,41 +4,99 @@
   <meta charset="utf-8">
   <title>Products - The Pirouette Pack</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <h1>🛍️ Our Preppy Products 🛍️</h1>
 
-  <!-- Example existing product card -->
+  <!-- Original Pack -->
   <div class="product-card">
     <h2>Original Pack 🎀</h2>
-    <p>The starter pack with basics.</p>
+    <p class="blurb">Our very first pack — made with love to help every dancer start their pirouette journey 💖</p>
+    <ul>
+      <li>✨ Basic dance accessories</li>
+      <li>🎀 Preppy starter items</li>
+      <li>💅 Essentials for new dancers</li>
+    </ul>
     <button class="add-to-cart">Add to Cart</button>
   </div>
 
-  <!-- Sophia's Hair Kit -->
+  <!-- Ultra Pack -->
   <div class="product-card">
-    <h2>🎀 Sophia's Hair Kit ✨</h2>
+    <h2>Ultra Pack ✨</h2>
+    <p class="blurb">The upgraded set with even more preppy essentials 🌟</p>
     <ul>
-      <li>💖 Hair Gel</li>
-      <li>🪮 Slick Brush</li>
-      <li>🖤 Mini Brush</li>
-      <li>🍭 Lollipop</li>
-      <li>🎀 Hair Bow</li>
-      <li>🌸/🧵 Scrunchie (choose below)</li>
-      <li>💨 Mini Hairspray</li>
-      <li>💗 Hair Ties</li>
+      <li>🎀 Includes everything from Original</li>
+      <li>🌸 Extra preppy goodies</li>
+      <li>💎 Bonus accessories</li>
     </ul>
-    <label for="scrunchie-choice-sophia">Choose Scrunchie:</label>
-    <select id="scrunchie-choice-sophia">
+    <button class="add-to-cart">Add to Cart</button>
+  </div>
+
+  <!-- Deluxe Pack -->
+  <div class="product-card">
+    <h2>Deluxe Pack 🌸</h2>
+    <p class="blurb">Our premium pack, full of everything you need to sparkle 🎀</p>
+    <ul>
+      <li>🎀 Includes everything from Ultra</li>
+      <li>💖 Premium accessories</li>
+      <li>✨ Extra sparkle items</li>
+    </ul>
+    <button class="add-to-cart">Add to Cart</button>
+  </div>
+
+  <!-- Sophia's Hair Kit (Regular) -->
+  <div class="product-card">
+    <h2>🎀 Sophia's Hair Kit (Regular) ✨</h2>
+    <p class="blurb">Sophia's regular hair kit gives you the simple everyday essentials with a scrunchie choice.</p>
+    <ul>
+      <li>💗 Hair Ties</li>
+      <li>🖤 Mini Brush</li>
+      <li>💨 Mini Hairspray</li>
+      <li>🌸/🧵 Scrunchie (choose below)</li>
+    </ul>
+    <label for="scrunchie-choice-sophia-regular">Choose Scrunchie:</label>
+    <select id="scrunchie-choice-sophia-regular">
       <option value="Satin Scrunchie 🌸">Satin Scrunchie 🌸</option>
       <option value="Cotton Scrunchie 🧵">Cotton Scrunchie 🧵</option>
     </select>
     <button class="add-to-cart">Add to Cart</button>
   </div>
 
+  <!-- Sophia's Hair Kit (Basic) -->
+  <div class="product-card">
+    <h2>🎀 Sophia's Hair Kit (Basic) ✨</h2>
+    <p class="blurb">Sophia's basic hair kit gives you all the basic essentials for your hair when you go dancing.</p>
+    <ul>
+      <li>💗 Hair Ties</li>
+      <li>📌 Hair Pins</li>
+      <li>💨 Mini Hairspray</li>
+      <li>🕸️ Hair Net</li>
+      <li>🌟 1 Sticker</li>
+    </ul>
+    <button class="add-to-cart">Add to Cart</button>
+  </div>
+
+  <!-- Sophia's Hair Kit (Deluxe) -->
+  <div class="product-card">
+    <h2>🎀 Sophia's Hair Kit (Deluxe) ✨</h2>
+    <p class="blurb">Sophia's deluxe hair kit gives you the perfect items to do great hair styles.</p>
+    <ul>
+      <li>💗 Hair Ties</li>
+      <li>📌 Hair Pins</li>
+      <li>💨 Mini Hairspray</li>
+      <li>🕸️ Hair Net</li>
+      <li>🌟 1 Sticker</li>
+      <li>🧴 Wax Stick</li>
+      <li>🍭 Lollipop</li>
+    </ul>
+    <button class="add-to-cart">Add to Cart</button>
+  </div>
+
   <!-- Alex's Pack -->
   <div class="product-card">
     <h2>💎 Alex's Pack 💕</h2>
+    <p class="blurb">Inspired by Alex’s sparkle 💎 — confidence, accessories, and all the glam to shine on stage 🌟</p>
     <ul>
       <li>🎽 2 Leotards</li>
       <li>💎 2 Bracelets</li>
