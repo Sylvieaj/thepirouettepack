@@ -1,54 +1,15 @@
-
-:root{
-  --accent:#ff80bf;
-  --bg:#fff6fb;
-}
-/* Global */
-body{ font-family: 'Comic Neue', cursive, Arial, sans-serif; background-color: #fff6fb; margin:0; padding:20px; color:#333; background-image: radial-gradient(#ffd6e8 6%, transparent 6%); background-size:40px 40px;}
-.header{ text-align:center; margin-bottom:12px;}
-.logo{ max-width:120px; display:block; margin:0 auto; transition: all 0.3s ease;}
-.logo:hover{ transform: scale(1.1) rotate(-3deg); filter: drop-shadow(0 0 6px #ffb6d9);}
-
-/* Sophia featured link under logo (styled like logo button) */
-.featured-link{ text-align:center; margin-top:12px; margin-bottom:20px;}
-.sophia-link {
-  font-family: 'Comic Neue', cursive;
-  font-size: 1.1em;
-  color: #ff69b4;
-  text-decoration: none;
-  border: 3px solid #ffb6c1;
-  border-radius: 20px;
-  padding: 10px 20px;
-  background-color: #fff0f5;
-  display: inline-block;
-  box-shadow: 0 4px 8px rgba(255, 182, 193, 0.6);
-  transition: all 0.3s ease;
-}
-.sophia-link:hover { background-color:#ffe4ef; transform:scale(1.05); box-shadow:0 6px 12px rgba(255,105,180,0.8);}
-
-/* Products */
-h1{ text-align:left; font-size:28px; color:#d63384; font-family:'Dancing Script', cursive;}
-.product-card{ background:#fff; border-radius:12px; padding:14px; margin:12px 0; box-shadow:0 6px 18px rgba(255,182,217,0.15); }
-.product-card h2{ margin:0 0 6px 0; color:#d63384; font-family:'Dancing Script', cursive;}
-.product-card .blurb{ margin:6px 0 10px 0; color:#6b3561;}
-.product-card ul{ margin:0 0 8px 18px; }
-.product-image{ width:100%; max-width:320px; border-radius:10px; display:block; margin:8px 0; }
-
-.add-to-cart{ background:var(--accent); color:white; border:none; padding:8px 12px; border-radius:20px; font-weight:700; cursor:pointer; }
-.add-to-cart:hover{ box-shadow:0 0 12px #ffb6d9; transform:scale(1.03); }
-
-/* Cart and checkout */
-#cart-items div{ margin:8px 0; padding:8px; background:#fff6f9; border-radius:8px; }
-button{ cursor:pointer; }
-.cart-controls button{ margin-left:8px; }
-
-/* Checkout/thankyou styling */
-.checkout-container{ max-width:720px; margin:20px auto; padding:18px; background:#fff6fb; border-radius:12px;}
-.order-summary div{ margin:6px 0; padding:8px; background:#fff; border-radius:8px; }
-
-/* Member join */
-.members-program{ max-width:420px; margin:14px auto; text-align:center; padding:12px; border-radius:12px; background:#fff; }
-.members-program input{ padding:8px; border-radius:8px; border:1px solid #ffd6e8; margin-right:6px; }
-
-/* small screens */
-@media (max-width:600px){ .logo{ max-width:90px;} .product-image{ max-width:100%; } }
+:root{--bg:#fff6fb;--accent:#ff80bf;--muted:#6b6b6b;--card:#fff}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:#222}
+.header{padding:18px;text-align:center}.logo{max-width:140px;display:block;margin:0 auto}
+nav{background:#fff;padding:10px;text-align:center}.navlink{margin:0 12px;color:#d63384;text-decoration:none;font-weight:700}
+.container{max-width:1000px;margin:20px auto;padding:0 16px}.hero{padding:28px 0;text-align:center}
+.cta{display:inline-block;background:var(--accent);color:white;padding:10px 18px;border-radius:12px;text-decoration:none;font-weight:700}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:18px}
+.card{background:var(--card);padding:12px;border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,0.06);text-align:center}
+.card img{width:100%;height:180px;object-fit:cover;border-radius:10px}.price{font-weight:800;color:var(--accent);margin-top:8px}.blurb{color:var(--muted);font-size:14px;margin-top:6px}
+.divider{display:flex;align-items:center;justify-content:center;margin:26px 0;color:var(--accent);font-size:20px}
+.divider-line{height:2px;background:#ffd6e8;width:120px;margin:0 12px;border-radius:2px}
+.footer{padding:24px;text-align:center;color:var(--muted);margin-top:30px}
+.signup-btn{background:var(--accent);color:white;padding:10px 16px;border-radius:12px;border:none;font-weight:700;cursor:pointer}
+.modal-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.35);z-index:50}.modal{display:none;position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);background:white;padding:20px;border-radius:12px;z-index:60;box-shadow:0 20px 40px rgba(0,0,0,0.12)}
+.welcome-banner{background:#ffd6e8;color:#d63384;padding:10px;text-align:center;font-weight:700;border-bottom:3px solid #ff99cc}
