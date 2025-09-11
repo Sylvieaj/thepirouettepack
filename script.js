@@ -1,5 +1,5 @@
 
-// Cart with localStorage support, product images, and remove option
+// Cart with localStorage, product images, remove option, floating hearts, and toast notifications
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 document.querySelectorAll(".add-to-cart").forEach(button => {
@@ -11,7 +11,8 @@ document.querySelectorAll(".add-to-cart").forEach(button => {
     cart.push({ product, price, image });
     saveCart();
     updateCartCount();
-    alert(product + " has been added to your cart!");
+    showToast(product + " added to your cart! 💖");
+    createHeart();
   });
 });
 
@@ -69,6 +70,25 @@ document.getElementById("close-cart").addEventListener("click", () => {
 document.getElementById("checkout-btn").addEventListener("click", () => {
   alert("Checkout not set up yet — but you could connect this to PayPal or Stripe!");
 });
+
+// Floating hearts effect
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerText = "💖";
+  heart.style.left = Math.random() * window.innerWidth + "px";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 5000);
+}
+
+// Toast notification function
+function showToast(message) {
+  const toast = document.createElement("div");
+  toast.className = "toast";
+  toast.innerText = message;
+  document.body.appendChild(toast);
+  setTimeout(() => toast.remove(), 3000);
+}
 
 // Initialize cart count on page load
 updateCartCount();

@@ -87,3 +87,45 @@ nav{background:#fff;padding:10px;text-align:center}.navlink{margin:0 12px;color:
   from { transform: translateX(-50%) scale(0.8); opacity: 0; }
   to { transform: translateX(-50%) scale(1); opacity: 1; }
 }
+
+
+/* --- Extra Preppy Add-ons --- */
+
+/* Cart button badge */
+#cart-count {
+  background: #ff80bf;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 8px;
+  font-size: 12px;
+  margin-left: 6px;
+}
+
+/* Toast notification */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ffb6d9;
+  color: #d63384;
+  padding: 12px 18px;
+  border-radius: 14px;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  animation: fadeInOut 3s ease forwards;
+  z-index: 2000;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(20px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(20px); }
+}
+
+/* Product card hover effect */
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(255, 182, 217, 0.4);
+  transition: 0.3s ease;
+}
