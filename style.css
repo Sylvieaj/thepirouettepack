@@ -129,3 +129,11 @@ nav{background:#fff;padding:10px;text-align:center}.navlink{margin:0 12px;color:
   box-shadow: 0 6px 20px rgba(255, 182, 217, 0.4);
   transition: 0.3s ease;
 }
+
+
+/* --- Preppy Polka Dot Wallpaper --- */
+body {
+  background-color: #fff6fb;
+  background-image: radial-gradient(#ffd6e8 6%, transparent 6%);
+  background-size: 40px 40px;
+}
