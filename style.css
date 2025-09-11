@@ -137,3 +137,43 @@ body {
   background-image: radial-gradient(#ffd6e8 6%, transparent 6%);
   background-size: 40px 40px;
 }
+
+
+/* --- Logo Styling Update --- */
+.logo {
+  max-width: 120px; /* smaller size */
+  display: block;
+  margin: 0 auto; /* center horizontally */
+}
+
+/* Make logo a bit smaller on small screens */
+@media (max-width: 600px) {
+  .logo {
+    max-width: 90px;
+  }
+}
+
+
+/* --- Logo Hover Effect --- */
+.logo:hover {
+  transform: scale(1.1) rotate(-3deg);
+  transition: all 0.3s ease-in-out;
+  filter: drop-shadow(0 0 6px #ffb6d9);
+}
+
+
+/* --- Cart Upgrades --- */
+#cart-total {
+  font-size: 18px;
+  font-weight: 800;
+  color: #d63384;
+  text-shadow: 0 0 6px #ffb6d9;
+}
+
+/* Floating Cart Button */
+.cart-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1500;
+}
