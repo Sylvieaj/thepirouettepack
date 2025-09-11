@@ -37,20 +37,4 @@ if (loginForm) {
   });
 }
 
-// Logout
-const logoutBtn = document.getElementById("logout-btn");
-if (logoutBtn) {
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      logoutBtn.style.display = "inline-block";
-    } else {
-      logoutBtn.style.display = "none";
-    }
-  });
-
-  logoutBtn.addEventListener("click", async () => {
-    await signOut(auth);
-    alert("You’ve been logged out 💖");
-    window.location = "index.html";
-  });
-}
+// Logout button visibility handled in index's auth snippet (if any)

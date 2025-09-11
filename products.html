@@ -2,16 +2,17 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Products - The Pirouette Pack</title>
+  <title>Our Products - The Pirouette Pack</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
-  <h1>🛍️ Our Preppy Products 🛍️</h1>
+  <h1>🛍️ Our Products 🛍️</h1>
 
   <!-- Original Pack -->
-  <div class="product-card">
+  <div class="product-card" id="original-pack">
     <h2>Original Pack 🎀</h2>
+    <img class="product-image" src="assets/images/original.jpg" alt="Original Pack">
     <p class="blurb">Our very first pack — made with love to help every dancer start their pirouette journey 💖</p>
     <ul>
       <li>✨ Basic dance accessories</li>
@@ -22,8 +23,9 @@
   </div>
 
   <!-- Ultra Pack -->
-  <div class="product-card">
+  <div class="product-card" id="ultra-pack">
     <h2>Ultra Pack ✨</h2>
+    <img class="product-image" src="assets/images/ultra.jpg" alt="Ultra Pack">
     <p class="blurb">The upgraded set with even more preppy essentials 🌟</p>
     <ul>
       <li>🎀 Includes everything from Original</li>
@@ -34,8 +36,9 @@
   </div>
 
   <!-- Deluxe Pack -->
-  <div class="product-card">
+  <div class="product-card" id="deluxe-pack">
     <h2>Deluxe Pack 🌸</h2>
+    <img class="product-image" src="assets/images/deluxe.jpg" alt="Deluxe Pack">
     <p class="blurb">Our premium pack, full of everything you need to sparkle 🎀</p>
     <ul>
       <li>🎀 Includes everything from Ultra</li>
@@ -45,9 +48,13 @@
     <button class="add-to-cart">Add to Cart</button>
   </div>
 
+  <!-- Sophia's Hair Kits (anchor) -->
+  <div id="sophias-kits"></div>
+
   <!-- Sophia's Hair Kit (Regular) -->
-  <div class="product-card">
+  <div class="product-card" id="sophia-regular">
     <h2>🎀 Sophia's Hair Kit (Regular) ✨</h2>
+    <img class="product-image" src="assets/images/sophia-regular.jpg" alt="Sophia Regular Kit">
     <p class="blurb">Sophia's regular hair kit gives you the simple everyday essentials with a scrunchie choice.</p>
     <ul>
       <li>💗 Hair Ties</li>
@@ -64,8 +71,9 @@
   </div>
 
   <!-- Sophia's Hair Kit (Basic) -->
-  <div class="product-card">
+  <div class="product-card" id="sophia-basic">
     <h2>🎀 Sophia's Hair Kit (Basic) ✨</h2>
+    <img class="product-image" src="assets/images/sophia-basic.jpg" alt="Sophia Basic Kit">
     <p class="blurb">Sophia's basic hair kit gives you all the basic essentials for your hair when you go dancing.</p>
     <ul>
       <li>💗 Hair Ties</li>
@@ -78,8 +86,9 @@
   </div>
 
   <!-- Sophia's Hair Kit (Deluxe) -->
-  <div class="product-card">
+  <div class="product-card" id="sophia-deluxe">
     <h2>🎀 Sophia's Hair Kit (Deluxe) ✨</h2>
+    <img class="product-image" src="assets/images/sophia-deluxe.jpg" alt="Sophia Deluxe Kit">
     <p class="blurb">Sophia's deluxe hair kit gives you the perfect items to do great hair styles.</p>
     <ul>
       <li>💗 Hair Ties</li>
@@ -89,13 +98,15 @@
       <li>🌟 1 Sticker</li>
       <li>🧴 Wax Stick</li>
       <li>🍭 Lollipop</li>
+      <li>💇 Hair Gel</li>
     </ul>
     <button class="add-to-cart">Add to Cart</button>
   </div>
 
   <!-- Alex's Pack -->
-  <div class="product-card">
+  <div class="product-card" id="alex-pack">
     <h2>💎 Alex's Pack 💕</h2>
+    <img class="product-image" src="assets/images/alex.jpg" alt="Alex Pack">
     <p class="blurb">Inspired by Alex’s sparkle 💎 — confidence, accessories, and all the glam to shine on stage 🌟</p>
     <ul>
       <li>🎽 2 Leotards</li>
@@ -113,5 +124,6 @@
     </select>
     <button class="add-to-cart">Add to Cart</button>
   </div>
+
 </body>
 </html>
