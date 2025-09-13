@@ -1,1 +1,95 @@
-<html><body><h1>Members Area</h1><p>Coming soon...</p></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Members - The Pirouette Pack</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="assets/logo.png" alt="Logo" onclick="window.location.href='index.html'">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="extras.html">Extras</a>
+      <a href="members.html">Members</a>
+      <a href="#">Cart</a>
+    </nav>
+  </header>
+  <div class="container">
+    <h1>Members Area</h1>
+    <form id="signup-form">
+      <h2>Sign Up</h2>
+      <input type="email" id="signup-email" placeholder="Email" required>
+      <input type="password" id="signup-password" placeholder="Password" required>
+      <button type="submit">Sign Up</button>
+    </form>
+    <div class="bow-divider"></div>
+    <form id="login-form">
+      <h2>Login</h2>
+      <input type="email" id="login-email" placeholder="Email" required>
+      <input type="password" id="login-password" placeholder="Password" required>
+      <button type="submit">Log In</button>
+    </form>
+    <div id="user-info"></div>
+    <button id="logout-btn" style="display:none;">Log Out</button>
+  </div>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-auth.js";
+    const firebaseConfig = {
+      apiKey: "AIzaSyDTQyo3zP3lw_Amgghun_rfT-77xlskpB4",
+      authDomain: "the-pirouette-pack.firebaseapp.com",
+      projectId: "the-pirouette-pack",
+      storageBucket: "the-pirouette-pack.firebasestorage.app",
+      messagingSenderId: "779287102094",
+      appId: "1:779287102094:web:a4529b2ec4015d7f5ebfdf",
+      measurementId: "G-WBCEPJ5E8F"
+    };
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    document.getElementById("signup-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("signup-email").value;
+      const password = document.getElementById("signup-password").value;
+      try {
+        await createUserWithEmailAndPassword(auth, email, password);
+        alert("Sign up successful!");
+      } catch (error) {
+        alert(error.message);
+      }
+    });
+    document.getElementById("login-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("login-email").value;
+      const password = document.getElementById("login-password").value;
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+        alert("Logged in!");
+      } catch (error) {
+        alert(error.message);
+      }
+    });
+    document.getElementById("logout-btn").addEventListener("click", async () => {
+      try {
+        await signOut(auth);
+        alert("Logged out!");
+      } catch (error) {
+        alert(error.message);
+      }
+    });
+    onAuthStateChanged(auth, (user) => {
+      const userInfo = document.getElementById("user-info");
+      const logoutBtn = document.getElementById("logout-btn");
+      if (user) {
+        userInfo.textContent = `Welcome, ${user.email}!`;
+        logoutBtn.style.display = "inline-block";
+      } else {
+        userInfo.textContent = "";
+        logoutBtn.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>

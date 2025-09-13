@@ -2,87 +2,52 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Products - The Pirouette Pack</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
-    <a href="index.html"><img src="assets/logo_new.jpeg" alt="Logo" class="logo"></a>
+    <img src="assets/logo.png" alt="Logo" onclick="window.location.href='index.html'">
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="stickers.html">Stickers</a></li>
-        <li><a href="monogramming.html">Monogramming</a></li>
-        <li><a href="checkout.html">Checkout</a></li>
-        <li><a href="members.html">Members</a></li>
-      </ul>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="extras.html">Extras</a>
+      <a href="members.html">Members</a>
+      <a href="#">Cart</a>
     </nav>
   </header>
-
-  <main>
-    <h1>Our Products 🎀✨</h1>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="assets/Original_Pack.png" alt="Original Pack">
-        <h2>Original Pack 🎀</h2>
-        <p>$20 AUD</p>
-        <button onclick="addToCart('Original Pack 🎀')">Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="assets/Ultra_Pack.png" alt="Ultra Pack">
-        <h2>Ultra Pack ✨</h2>
-        <p>$25 AUD</p>
-        <button onclick="addToCart('Ultra Pack ✨')">Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="assets/Deluxe_Pack.png" alt="Deluxe Pack">
-        <h2>Deluxe Pack 🌸</h2>
-        <p>$30 AUD</p>
-        <button onclick="addToCart('Deluxe Pack 🌸')">Add to Cart</button>
-      </div>
-      <div class="product-card" id="sophia">
-        <img src="assets/Sophias_Hair_Kit_Regular.png" alt="Sophia's Hair Kit Regular">
-        <h2>Sophia's Hair Kit (Regular)</h2>
-        <p>$20 AUD</p>
-        <p>Essentials for dancers 🎀</p>
-        <button onclick="addToCart('Sophia\'s Hair Kit (Regular)')">Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="assets/Sophias_Hair_Kit_Basic.png" alt="Sophia's Hair Kit Basic">
-        <h2>Sophia's Hair Kit (Basic)</h2>
-        <p>$25 AUD</p>
-        <p>Sophia's basic hair kit, gives you all the basic essentials for your hair when you go dancing.</p>
-        <button onclick="addToCart('Sophia\'s Hair Kit (Basic)')">Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="assets/Sophias_Hair_Kit_Deluxe.png" alt="Sophia's Hair Kit Deluxe">
-        <h2>Sophia's Hair Kit (Deluxe)</h2>
-        <p>$35 AUD</p>
-        <p>Sophia's deluxe hair kit gives you the perfect items to do great hair styles, with gel included.</p>
-        <button onclick="addToCart('Sophia\'s Hair Kit (Deluxe)')">Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="assets/Alexs_Pack.png" alt="Alex's Pack">
-        <h2>Alex's Pack 💕</h2>
-        <p>$35 AUD</p>
-        <p>Includes leotards, accessories, and hair care 🎀</p>
-        <button onclick="addToCart('Alex\'s Pack 💕')">Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="assets/Stickers.png" alt="Stickers">
-        <h2>Stickers ✨</h2>
-        <p>$5 AUD</p>
-        <button onclick="addToCart('Stickers ✨')">Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="assets/Monogramming.png" alt="Monogramming">
-        <h2>Monogramming 🌸</h2>
-        <p>$5 AUD</p>
-        <button onclick="addToCart('Monogramming 🌸')">Add to Cart</button>
-      </div>
+  <div class="container">
+    <h1>Our Packs</h1>
+    <div class="product">
+      <img src="assets/placeholder.png" alt="Original Pack">
+      <h2>Original Pack</h2>
+      <button>Add to Cart</button><button>Buy Now</button>
     </div>
-  </main>
+    <div class="bow-divider"></div>
+    <div class="product">
+      <img src="assets/placeholder.png" alt="Ultra Pack">
+      <h2>Ultra Pack</h2>
+      <button>Add to Cart</button><button>Buy Now</button>
+    </div>
+    <div class="bow-divider"></div>
+    <div class="product">
+      <img src="assets/placeholder.png" alt="Deluxe Pack">
+      <h2>Deluxe Pack</h2>
+      <button>Add to Cart</button><button>Buy Now</button>
+    </div>
+    <div class="bow-divider"></div>
+    <div class="product">
+      <img src="assets/placeholder.png" alt="Alex's Kit">
+      <h2>Alex's Kit</h2>
+      <button>Add to Cart</button><button>Buy Now</button>
+    </div>
+    <div class="bow-divider"></div>
+    <div class="product">
+      <img src="assets/placeholder.png" alt="Sophia's Hair Kit">
+      <h2>Sophia's Hair Kit</h2>
+      <button>Add to Cart</button><button>Buy Now</button>
+    </div>
+  </div>
 </body>
 </html>

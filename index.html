@@ -4,34 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Pirouette Pack</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <script src="assets/js/script.js" defer></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <a href="index.html"><img src="assets/images/logo.jpeg" alt="The Pirouette Pack Logo" class="logo"></a>
+    <img src="assets/logo.png" alt="Logo" onclick="window.location.href='index.html'">
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="shop.html">Shop</a></li>
-        <li><a href="members.html">Members</a></li>
-        <li><a href="cart.html">Cart</a></li>
-        <li><a href="checkout.html">Checkout</a></li>
-      </ul>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="extras.html">Extras</a>
+      <a href="members.html">Members</a>
+      <a href="#">Cart</a>
     </nav>
   </header>
-
-  <main>
+  <div class="container">
     <h1>Welcome to The Pirouette Pack</h1>
-    <p>Your Dance Essentials Kit</p>
-
-    <button onclick="window.location.href='products/sophia-hair-kit.html'">
-      Shop Sophia's Hair Kit
-    </button>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 The Pirouette Pack</p>
-  </footer>
+    <p>Here’s our special selection of packs designed just for you. Discover your perfect style!</p>
+    <button onclick="window.location.href='products.html'">View Products</button>
+  </div>
 </body>
 </html>
