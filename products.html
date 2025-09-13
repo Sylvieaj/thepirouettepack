@@ -1,59 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Products - The Pirouette Pack</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="assets/logo.png">
-  <script defer src="script.js"></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Products - The Pirouette Pack</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="assets/logo.png">
 </head>
 <body>
-  <header>
-    <a href="index.html"><img src="assets/logo.png" alt="Logo" class="logo"></a>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="products.html">Products</a>
-      <a href="extras.html">Extras</a>
-      <a href="members.html">Members</a>
-      <a href="cart.html">Cart</a>
-    </nav>
-  </header>
+<header>
+  <a href="index.html"><img src="assets/logo.png" class="logo" alt="Logo"></a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="extras.html">Extras</a>
+    <a href="members.html">Members</a>
+    <a href="members.html">My Account</a>
+    <a href="cart.html">Cart</a>
+  </nav>
+</header>
+<div class="bow-nav">🎀</div>
+<div class="container">
+  <h1>Our Packs</h1>
 
-  <main>
-    <h1>Our Dance Kits</h1>
+  <section class="product-card" id="original">
+    <img src="assets/placeholder.png" alt="Original Pack">
+    <h2>Original Pack</h2>
+    <p class="note">$20</p>
+    <button class="shop-btn" onclick="addToCart('Original Pack',20)">Add to Cart</button>
+    <button class="shop-btn" onclick="buyNow('Original Pack',20)">Buy Now</button>
+  </section>
 
-    <section class="product-card">
-      <img src="assets/placeholder.png" alt="Sophia's Hair Kit">
-      <h2>Sophia's Hair Kit</h2>
-      <p>$20</p>
-      <button onclick="addToCart('Sophia\'s Hair Kit', 20)" class="shop-btn">Add to Cart</button>
-      <button class="shop-btn">Buy Now</button>
-    </section>
+  <div class="bow-divider">🎀</div>
 
-    <div class="bow-divider">🎀</div>
+  <section class="product-card" id="ultra">
+    <img src="assets/placeholder.png" alt="Ultra Pack">
+    <h2>Ultra Pack</h2>
+    <p class="note">$25</p>
+    <button class="shop-btn" onclick="addToCart('Ultra Pack',25)">Add to Cart</button>
+    <button class="shop-btn" onclick="buyNow('Ultra Pack',25)">Buy Now</button>
+  </section>
 
-    <section class="product-card">
-      <img src="assets/placeholder.png" alt="Alex's Kit">
-      <h2>Alex's Kit</h2>
-      <p>$25</p>
-      <button onclick="addToCart('Alex\'s Kit', 25)" class="shop-btn">Add to Cart</button>
-      <button class="shop-btn">Buy Now</button>
-    </section>
+  <div class="bow-divider">🎀</div>
 
-    <div class="bow-divider">🎀</div>
+  <section class="product-card" id="deluxe">
+    <img src="assets/placeholder.png" alt="Deluxe Pack">
+    <h2>Deluxe Pack</h2>
+    <p class="note">$30</p>
+    <button class="shop-btn" onclick="addToCart('Deluxe Pack',30)">Add to Cart</button>
+    <button class="shop-btn" onclick="buyNow('Deluxe Pack',30)">Buy Now</button>
+  </section>
 
-    <section class="product-card">
-      <img src="assets/placeholder.png" alt="Deluxe Pack">
-      <h2>Deluxe Pack</h2>
-      <p>$40</p>
-      <button onclick="addToCart('Deluxe Pack', 40)" class="shop-btn">Add to Cart</button>
-      <button class="shop-btn">Buy Now</button>
-    </section>
-  </main>
+  <div class="bow-divider">🎀</div>
 
-  <footer>
-    <p>🎀 Made by dancers for dancers 🎀</p>
-  </footer>
+  <section class="product-card" id="sophia">
+    <img src="assets/placeholder.png" alt="Sophia's Hair Kit">
+    <h2>Sophia's Hair Kit</h2>
+    <p class="note">$35</p>
+    <button class="shop-btn" onclick="addToCart("Sophia's Hair Kit",35)">Add to Cart</button>
+    <button class="shop-btn" onclick="buyNow("Sophia's Hair Kit",35)">Buy Now</button>
+  </section>
+
+  <div class="bow-divider">🎀</div>
+
+  <section class="product-card" id="alex">
+    <img src="assets/placeholder.png" alt="Alex's Kit">
+    <h2>Alex's Kit</h2>
+    <p class="note">$35</p>
+    <button class="shop-btn" onclick="addToCart("Alex's Kit",35)">Add to Cart</button>
+    <button class="shop-btn" onclick="buyNow("Alex's Kit",35)">Buy Now</button>
+  </section>
+
+</div>
+<footer>Made by dancers for dancers</footer>
+<script src="script.js"></script>
 </body>
 </html>
