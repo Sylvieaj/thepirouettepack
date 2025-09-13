@@ -5,22 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Pirouette Pack</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <script defer src="script.js"></script>
 </head>
 <body>
   <header>
-    <img src="assets/logo.png" alt="Logo" onclick="window.location.href='index.html'">
+    <a href="index.html"><img src="assets/logo.png" alt="Logo" class="logo"></a>
     <nav>
       <a href="index.html">Home</a>
       <a href="products.html">Products</a>
       <a href="extras.html">Extras</a>
       <a href="members.html">Members</a>
-      <a href="#">Cart</a>
+      <a href="cart.html">Cart</a>
     </nav>
   </header>
-  <div class="container">
-    <h1>Welcome to The Pirouette Pack</h1>
-    <p>Here’s our special selection of packs designed just for you. Discover your perfect style!</p>
-    <button onclick="window.location.href='products.html'">View Products</button>
-  </div>
+
+  <main>
+    <section class="blurb-box">
+      <div class="bow">🎀</div>
+      <p>Welcome to The Pirouette Pack – your dance essentials, crafted with love. We believe in making every dancer feel prepared, confident, and special.</p>
+      <a href="products.html" class="shop-btn">Shop Now</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>🎀 Made by dancers for dancers 🎀</p>
+  </footer>
 </body>
 </html>

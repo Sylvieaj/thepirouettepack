@@ -1,1 +1,43 @@
-<html><body><h1>Checkout</h1><p>Checkout functionality coming soon...</p></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - The Pirouette Pack</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <a href="index.html"><img src="assets/logo.png" alt="Logo" class="logo"></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="extras.html">Extras</a>
+      <a href="members.html">Members</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Checkout</h1>
+    <form id="checkout-form">
+      <input type="text" placeholder="Full Name" required><br><br>
+      <input type="email" placeholder="Email" required><br><br>
+      <input type="text" placeholder="Address" required><br><br>
+      <select required>
+        <option value="">Select Payment</option>
+        <option value="card">Credit Card</option>
+        <option value="paypal">PayPal</option>
+      </select><br><br>
+      <button type="submit" class="shop-btn">Place Order</button>
+    </form>
+    <p id="order-message"></p>
+  </main>
+
+  <footer>
+    <p>🎀 Made by dancers for dancers 🎀</p>
+  </footer>
+</body>
+</html>

@@ -5,49 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Products - The Pirouette Pack</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <script defer src="script.js"></script>
 </head>
 <body>
   <header>
-    <img src="assets/logo.png" alt="Logo" onclick="window.location.href='index.html'">
+    <a href="index.html"><img src="assets/logo.png" alt="Logo" class="logo"></a>
     <nav>
       <a href="index.html">Home</a>
       <a href="products.html">Products</a>
       <a href="extras.html">Extras</a>
       <a href="members.html">Members</a>
-      <a href="#">Cart</a>
+      <a href="cart.html">Cart</a>
     </nav>
   </header>
-  <div class="container">
-    <h1>Our Packs</h1>
-    <div class="product">
-      <img src="assets/placeholder.png" alt="Original Pack">
-      <h2>Original Pack</h2>
-      <button>Add to Cart</button><button>Buy Now</button>
-    </div>
-    <div class="bow-divider"></div>
-    <div class="product">
-      <img src="assets/placeholder.png" alt="Ultra Pack">
-      <h2>Ultra Pack</h2>
-      <button>Add to Cart</button><button>Buy Now</button>
-    </div>
-    <div class="bow-divider"></div>
-    <div class="product">
-      <img src="assets/placeholder.png" alt="Deluxe Pack">
-      <h2>Deluxe Pack</h2>
-      <button>Add to Cart</button><button>Buy Now</button>
-    </div>
-    <div class="bow-divider"></div>
-    <div class="product">
-      <img src="assets/placeholder.png" alt="Alex's Kit">
-      <h2>Alex's Kit</h2>
-      <button>Add to Cart</button><button>Buy Now</button>
-    </div>
-    <div class="bow-divider"></div>
-    <div class="product">
+
+  <main>
+    <h1>Our Dance Kits</h1>
+
+    <section class="product-card">
       <img src="assets/placeholder.png" alt="Sophia's Hair Kit">
       <h2>Sophia's Hair Kit</h2>
-      <button>Add to Cart</button><button>Buy Now</button>
-    </div>
-  </div>
+      <p>$20</p>
+      <button onclick="addToCart('Sophia\'s Hair Kit', 20)" class="shop-btn">Add to Cart</button>
+      <button class="shop-btn">Buy Now</button>
+    </section>
+
+    <div class="bow-divider">🎀</div>
+
+    <section class="product-card">
+      <img src="assets/placeholder.png" alt="Alex's Kit">
+      <h2>Alex's Kit</h2>
+      <p>$25</p>
+      <button onclick="addToCart('Alex\'s Kit', 25)" class="shop-btn">Add to Cart</button>
+      <button class="shop-btn">Buy Now</button>
+    </section>
+
+    <div class="bow-divider">🎀</div>
+
+    <section class="product-card">
+      <img src="assets/placeholder.png" alt="Deluxe Pack">
+      <h2>Deluxe Pack</h2>
+      <p>$40</p>
+      <button onclick="addToCart('Deluxe Pack', 40)" class="shop-btn">Add to Cart</button>
+      <button class="shop-btn">Buy Now</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>🎀 Made by dancers for dancers 🎀</p>
+  </footer>
 </body>
 </html>
