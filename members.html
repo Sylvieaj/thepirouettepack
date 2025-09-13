@@ -1,62 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Members</title>
-  <link rel="stylesheet" href="style.css" />
-  <script type="module" src="firebase.js"></script>
-</head>
-<body>
-  <h1>Join Us</h1>
-  <form id="signup-form">
-    <input type="email" id="email" placeholder="Email" required />
-    <input type="password" id="password" placeholder="Password" required />
-    <button type="submit">Sign Up</button>
-  </form>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Members</title><link rel="stylesheet" href="style.css"></head><body>
+<header><img src="assets/logo.jpeg" class="logo" alt="logo"><div class="tagline">made by dancers for dancers</div></header>
+<div class="bow-nav">🎀</div>
+<div class="container">
+<h1 class="preppy-title">🎀 Become a Member 🎀</h1>
+<form id="signupForm" class="preppy-form">
+  <input class="input-field" id="signupEmail" type="email" placeholder="💌 Your email" required>
+  <input class="input-field" id="signupPassword" type="password" placeholder="🔒 Password (6+ chars)" required>
+  <button class="shop-btn" type="submit">✨ Sign Up ✨</button>
+</form>
+<div class="bow-divider">🎀</div>
+<h2 class="preppy-title">Already a member?</h2>
+<form id="loginForm" class="preppy-form">
+  <input class="input-field" id="loginEmail" type="email" placeholder="💌 Your email" required>
+  <input class="input-field" id="loginPassword" type="password" placeholder="🔒 Password" required>
+  <button class="shop-btn" type="submit">💅 Log In 💅</button>
+</form>
+<p id="member-message" class="note"></p>
+</div>
+<script type="module">
+  import { auth } from "./firebase.js";
+  import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-auth.js";
 
-  <form id="login-form">
-    <input type="email" id="login-email" placeholder="Email" required />
-    <input type="password" id="login-password" placeholder="Password" required />
-    <button type="submit">Login</button>
-  </form>
+  const signupForm = document.getElementById('signupForm');
+  const loginForm = document.getElementById('loginForm');
+  const message = document.getElementById('member-message');
 
-  <script type="module">
-    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
-    import { app } from "./firebase.js";
+  signupForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('signupEmail').value;
+    const password = document.getElementById('signupPassword').value;
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      message.textContent = '🎉 Signed up! Check your email.';
+      message.style.color = 'green';
+      // send email notification to shop owner (vercel function)
+      fetch('/api/sendEmail', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({type:'signup', email})});
+    } catch (err) {
+      message.textContent = '⚠️ ' + err.message;
+      message.style.color = 'red';
+    }
+  });
 
-    const auth = getAuth(app);
+  loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      message.textContent = '💖 Logged in!';
+      message.style.color = 'green';
+    } catch (err) {
+      message.textContent = '⚠️ ' + err.message;
+      message.style.color = 'red';
+    }
+  });
 
-    document.getElementById("signup-form").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-
-      try {
-        await createUserWithEmailAndPassword(auth, email, password);
-        alert("Signed up successfully!");
-        await fetch("/api/sendEmail", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email })
-        });
-      } catch (err) {
-        alert(err.message);
-      }
-    });
-
-    document.getElementById("login-form").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const email = document.getElementById("login-email").value;
-      const password = document.getElementById("login-password").value;
-
-      try {
-        await signInWithEmailAndPassword(auth, email, password);
-        alert("Logged in successfully!");
-      } catch (err) {
-        alert(err.message);
-      }
-    });
-  </script>
-</body>
-</html>
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      message.textContent = 'Welcome back!';
+    }
+  });
+</script>
+</body></html>

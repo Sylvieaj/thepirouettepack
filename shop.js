@@ -1,0 +1,13 @@
+// shop.js - client-side cart & checkout logic
+function getCart(){ return JSON.parse(localStorage.getItem('cart')||'[]'); }
+function saveCart(c){ localStorage.setItem('cart', JSON.stringify(c)); }
+function addToCart(name, price){ let cart=getCart(); const found = cart.find(i=>i.name===name); if(found) found.quantity+=1; else cart.push({name, price, quantity:1}); saveCart(cart); alert(name + ' added to cart'); }
+function renderCart(){ const c=getCart(); const container=document.getElementById('cart-items'); const totalEl=document.getElementById('cart-total'); if(!container) return; container.innerHTML=''; let total=0; c.forEach((it, idx)=>{ total += it.price * it.quantity; const div=document.createElement('div'); div.className='cart-item'; div.innerHTML = '<div><strong>'+it.name+'</strong><div class="note">$'+it.price+' x '+it.quantity+'</div></div><div><button class="small-btn" onclick="removeFromCart('+idx+')">Remove</button></div>'; container.appendChild(div); }); if(totalEl) totalEl.innerText = 'Total: $' + total; }
+function removeFromCart(i){ let c=getCart(); c.splice(i,1); saveCart(c); renderCart(); }
+function checkout(){ // show checkout page with items
+  const cart = getCart(); localStorage.setItem('checkout', JSON.stringify(cart)); window.location.href='checkout.html'; }
+function renderCheckout(){ const cart = JSON.parse(localStorage.getItem('checkout')||'[]'); const list = document.getElementById('checkout-list'); const totalEl = document.getElementById('checkout-total'); if(!list) return; list.innerHTML=''; let total=0; cart.forEach(it=>{ total += it.price * it.quantity; const d = document.createElement('div'); d.className='product-card'; d.innerHTML = '<h3>'+it.name+'</h3><div class="note">$'+it.price+' x '+it.quantity+'</div>'; list.appendChild(d); }); totalEl.innerText = 'Total: $' + total; }
+function completeOrder(e){ e.preventDefault(); const cart = JSON.parse(localStorage.getItem('checkout')||'[]'); const name = document.getElementById('buyer-name').value; const email = document.getElementById('buyer-email').value; let total=0; cart.forEach(i=> total += i.price * i.quantity); // send order email to shop owner
+  fetch('/api/sendEmail',{method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({type:'order', order:{email, items:cart, total}})});
+  localStorage.removeItem('cart'); localStorage.removeItem('checkout'); window.location.href='thankyou.html'; }
+document.addEventListener('DOMContentLoaded', ()=>{ if(document.getElementById('cart-items')) renderCart(); if(document.getElementById('checkout-list')) renderCheckout(); });

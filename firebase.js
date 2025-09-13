@@ -1,7 +1,8 @@
-// Firebase setup
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
+// firebase.js - initialize Firebase (web)
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-auth.js";
 
+// Replace these values with your project's config if you want to override
 const firebaseConfig = {
   apiKey: "AIzaSyDTQyo3zP3lw_Amgghun_rfT-77xlskpB4",
   authDomain: "the-pirouette-pack.firebaseapp.com",
@@ -13,4 +14,4 @@ const firebaseConfig = {
 };
 
 export const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+export const auth = getAuth(app);
