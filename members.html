@@ -1,22 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Members - The Pirouette Pack</title>
-<link rel="stylesheet" href="style.css">
-<link rel="icon" type="image/png" href="assets/logo.png">
-</head>
-<body>
-<header>
-  <a href="index.html"><img src="assets/logo.png" class="logo" alt="Logo"></a>
-  <nav>
-    <a href="index.html">Home</a><a href="products.html">Products</a><a href="extras.html">Extras</a><a href="members.html">Members</a><a href="members.html">My Account</a><a href="cart.html">Cart</a>
-  </nav>
-</header>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Members</title><link rel="stylesheet" href="style.css"><link rel="icon" href="assets/logo.png"/></head><body>
+<header><a href="index.html"><img src="assets/logo.png" class="logo" alt="Logo"></a><nav><a href="index.html">Home</a><a href="products.html">Products</a><a href="extras.html">Extras</a><a href="members.html">Members</a><a href="members.html">My Account</a><a href="cart.html">Cart</a></nav></header>
 <div class="bow-nav">🎀</div>
 <div class="container">
   <h1>Members</h1>
-
   <div id="auth-forms">
     <form id="signup-form" class="product-card">
       <h2>Sign Up</h2>
@@ -25,9 +11,7 @@
       <input class="input-field" id="signup-password" type="password" placeholder="Password" required><br>
       <button class="shop-btn" type="submit">Sign Up</button>
     </form>
-
     <div class="bow-divider">🎀</div>
-
     <form id="login-form" class="product-card">
       <h2>Log In</h2>
       <input class="input-field" id="login-email" type="email" placeholder="Email" required><br>
@@ -35,73 +19,30 @@
       <button class="shop-btn" type="submit">Log In</button>
     </form>
   </div>
-
   <div id="member-area" style="display:none;">
     <h2 id="welcome-msg"></h2>
     <button id="logout-btn" class="shop-btn">Log Out</button>
   </div>
-
-  <p class="note">When someone signs up, their info is saved to your Firebase project.</p>
+  <p class="note">Signups are saved to your Firebase project.</p>
 </div>
-
 <footer>Made by dancers for dancers</footer>
-
-<!-- Firebase SDKs -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-auth.js";
 import { getFirestore, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js";
-
 const firebaseConfig = {"apiKey": "AIzaSyDTQyo3zP3lw_Amgghun_rfT-77xlskpB4", "authDomain": "the-pirouette-pack.firebaseapp.com", "projectId": "the-pirouette-pack", "storageBucket": "the-pirouette-pack.firebasestorage.app", "messagingSenderId": "779287102094", "appId": "1:779287102094:web:a4529b2ec4015d7f5ebfdf", "measurementId": "G-WBCEPJ5E8F"};
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
-
 const signupForm = document.getElementById('signup-form');
 const loginForm = document.getElementById('login-form');
 const authForms = document.getElementById('auth-forms');
 const memberArea = document.getElementById('member-area');
 const welcomeMsg = document.getElementById('welcome-msg');
 const logoutBtn = document.getElementById('logout-btn');
-
-signupForm.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const name = document.getElementById('signup-name').value;
-  const email = document.getElementById('signup-email').value;
-  const password = document.getElementById('signup-password').value;
-  try {
-    const userCred = await createUserWithEmailAndPassword(auth, email, password);
-    // Save extra info to Firestore under collection 'members' with doc id = uid
-    await setDoc(doc(db, 'members', userCred.user.uid), { name: name, email: email, createdAt: new Date().toISOString() });
-    alert('Sign up successful!');
-  } catch(err){ alert(err.message); }
-});
-
-loginForm.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const email = document.getElementById('login-email').value;
-  const password = document.getElementById('login-password').value;
-  try { await signInWithEmailAndPassword(auth, email, password); alert('Logged in!'); } catch(err){ alert(err.message); }
-});
-
-logoutBtn.addEventListener('click', async () => { await signOut(auth); });
-
-onAuthStateChanged(auth, async (user) => {
-  if(user){
-    // fetch member's name from Firestore
-    const docRef = doc(db, 'members', user.uid);
-    const snapshot = await getDoc(docRef);
-    const name = snapshot.exists() ? snapshot.data().name : user.email;
-    welcomeMsg.innerText = `Welcome, ${name}!`;
-    authForms.style.display = 'none';
-    memberArea.style.display = 'block';
-  } else {
-    authForms.style.display = 'block';
-    memberArea.style.display = 'none';
-  }
-});
+signupForm.addEventListener('submit', async (e)=>{ e.preventDefault(); const name=document.getElementById('signup-name').value; const email=document.getElementById('signup-email').value; const password=document.getElementById('signup-password').value; try{ const userCred = await createUserWithEmailAndPassword(auth, email, password); await setDoc(doc(db,'members', userCred.user.uid), { name: name, email: email, createdAt: new Date().toISOString() }); alert('Sign up successful!'); }catch(err){ alert(err.message); } });
+loginForm.addEventListener('submit', async (e)=>{ e.preventDefault(); const email=document.getElementById('login-email').value; const password=document.getElementById('login-password').value; try{ await signInWithEmailAndPassword(auth, email, password); alert('Logged in!'); }catch(err){ alert(err.message); } });
+logoutBtn.addEventListener('click', async ()=>{ await signOut(auth); });
+onAuthStateChanged(auth, async (user)=>{ if(user){ const snapshot = await getDoc(doc(db,'members', user.uid)); const name = snapshot.exists() ? snapshot.data().name : user.email; welcomeMsg.innerText = `Welcome, ${'{name}'}!`; authForms.style.display='none'; memberArea.style.display='block'; } else { authForms.style.display='block'; memberArea.style.display='none'; } });
 </script>
-
-<script src="script.js"></script>
-</body>
-</html>
+<script src="script.js"></script></body></html>
