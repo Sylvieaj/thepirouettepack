@@ -1,40 +1,4 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up - Pirouette Pack</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-        (function(){ emailjs.init("C_7E6znxucwZWBEHF"); })();
-    </script>
-</head>
-<body>
-    <header><h1>Sign Up for Updates</h1></header>
-    <nav>
-        <a href="index.html">Home</a> |
-        <a href="products.html">Products</a> |
-        <a href="signup.html">Sign Up</a>
-    </nav>
-
-    <section id="signup">
-        <form id="signup-form">
-            <input type="text" name="user_name" placeholder="Your Name" required>
-            <input type="email" name="user_email" placeholder="Your Email" required>
-            <button type="submit">Sign Up</button>
-        </form>
-    </section>
-
-    <script>
-        const form = document.getElementById('signup-form');
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-            emailjs.sendForm('service_23q3w5i', 'template_lksqz4e', this)
-            .then(() => { alert('Yay! Your signup was sent!'); form.reset(); },
-                  (error) => { alert('Oops… something went wrong: ' + JSON.stringify(error)); });
-        });
-    </script>
-</body>
-</html>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Sign Up</title><link rel="stylesheet" href="style.css"></head><body>
+<header><img src="assets/logo.png" alt="Logo" id="logo" onclick="goHome()"><nav><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="cart.html">Cart</a><a href="account.html">Account</a><a href="signup.html">Sign Up</a></nav></header>
+<main><h1>Sign Up</h1><form><label>Email:</label><input type="email" placeholder="Enter your email" required><br><br><label>Password:</label><input type="password" placeholder="Enter your password" required><br><br><button type="submit">Sign Up</button></form></main><script src="script.js"></script></body></html>

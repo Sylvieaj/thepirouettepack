@@ -1,1 +1,1 @@
-PLACEHOLDER SCRIPT.JS CONTENT
+function goHome() { window.location.href = 'index.html'; }
