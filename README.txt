@@ -1,0 +1,1 @@
+Instructions to add Stripe test keys and run site

@@ -1,0 +1,1 @@
+// server.js Stripe backend placeholder
